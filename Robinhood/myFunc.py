@@ -1,12 +1,6 @@
 import statistics
 
-def get_Prices(my_trader, symbol):
-    stock_instrument = my_trader.instruments(symbol)[0]
-
-    week1 = my_trader.get_historical_quotes(symbol, '5minute','week')
-
-    prices = week1['results'][0]['historicals']
-
+def get_Prices(prices):
     low = 99999999;
     high = 0;
     medianArr = []
