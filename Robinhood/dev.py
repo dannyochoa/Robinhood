@@ -61,7 +61,7 @@ if(signin):
 
         if(priceDiff < 0):#buy startingLastTradePrice
             if(targetBuyPercent < percentDiff):
-                numStocksToPurchace = (pricentDiff * 10) * numStocks
+                numStocksToPurchace = (percentDiff * 10) * numStocks
                 targetBuyPercent = targetBuyPercent + 1
                 moneyNeeded = lastTradePrice * int(numStocksToPurchace)
                 stocksBought = stocksBought + int(numStocksToPurchace)
@@ -91,7 +91,7 @@ if(signin):
 
         if(priceDiff > 0):#sell
             if(targetSellPercent < percentDiff):
-                numStocksToSell = (priceDiff * 10) * stocksBought
+                numStocksToSell = (percentDiff * 10) * stocksBought
                 targetSellPercent = targetSellPercent + 1
                 moneyReturned = lastTradePrice * int(numStocksToSell)
                 allowance = allowance + moneyReturned
@@ -119,9 +119,9 @@ if(signin):
 
         priceDiff2 = startingMedianPrice - lastTradePrice
         percentDiff2 = startingMedianPrice - lastTradePrice
-        if(priceDiff < 0):#buy startingLastTradePrice
-            if(targetBuyPercent2 < percentDiff):
-                numStocksToPurchace = (pricentDiff * 10) * numStocks2
+        if(priceDif2f < 0):#buy startingLastTradePrice
+            if(targetBuyPercent2 < percentDiff2):
+                numStocksToPurchace = (percentDiff2 * 10) * numStocks2
                 targetBuyPercent2 = targetBuyPercent2 + 1
                 moneyNeeded = lastTradePrice * int(numStocksToPurchace)
                 stocksBought2 = stocksBought2 + int(numStocksToPurchace)
@@ -149,9 +149,9 @@ if(signin):
                     logger.info(allowanceP)
 
 
-        if(priceDiff > 0):#sell
-            if(targetSellPercent2 < percentDiff):
-                numStocksToSell = (priceDiff * 10) * stocksBought2
+        if(priceDiff2 > 0):#sell
+            if(targetSellPercent2 < percentDiff2):
+                numStocksToSell = (percentDiff2 * 10) * stocksBought2
                 targetSellPercent2 = targetSellPercent2 + 1
                 moneyReturned = lastTradePrice * int(numStocksToSell)
                 allowance = allowance + moneyReturned
