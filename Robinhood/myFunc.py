@@ -1,6 +1,7 @@
 import statistics
+import logging as logger
 
-def get_Prices(prices):
+def get_Prices(prices, company):
     low = 99999999;
     high = 0;
     medianArr = []
@@ -31,11 +32,14 @@ def get_Prices(prices):
         medianArr.insert(len(medianArr),high_price)
         medianArr.insert(len(medianArr),low_price)
 
-    print("********************** Company **************************")
-    print(symbol)
-    print("************************ LOW ****************************")
-    print(low)
-    print("*********************** High ****************************")
-    print(high)
-    print("*********************** median **************************")
-    print(statistics.median(medianArr))
+    median = statistics.median(medianArr)
+    logger.info("*********************** COMPANY *************************")
+    logger.info(company)
+    logger.info("************************ LOW ****************************")
+    logger.info(low)
+    logger.info("*********************** High ****************************")
+    logger.info(high)
+    logger.info("*********************** median **************************")
+    logger.info(median)
+
+    return {"company" : company, "low" : low, "high" : high, "median" : median}
